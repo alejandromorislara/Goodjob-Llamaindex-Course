@@ -1,4 +1,7 @@
-requests>=2.31.0
-pydantic>=2.0.0
-typing-extensions>=4.7.0
-llama-index-core>=0.10.0
+requests
+pydantic
+typing-extensions
+llama-index-core
+llama-index-llms-openai
+llama-index-llms-huggingface
+python-dotenv

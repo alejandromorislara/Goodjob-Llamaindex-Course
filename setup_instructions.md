@@ -256,5 +256,3 @@ Una vez configurado todo:
 ---
 
 ¡**Ya estás listo para crear agentes inteligentes!** 🎉
-
-¡Que disfrutes el curso! 🚀
