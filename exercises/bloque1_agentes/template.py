@@ -36,30 +36,32 @@ def setup_llm():
     """
     Configura y retorna un modelo de lenguaje.
     
-    TODO: Implementa una de estas opciones:
+    TODO: Implementa estas opciones:
     - OpenAI (requiere OPENAI_API_KEY)
-    - HuggingFace (requiere HUGGINGFACE_API_KEY o usa gratis)
+    - HuggingFace (requiere HUGGINGFACE_API_KEY)
     
     Returns:
         LLM configurado y listo para usar
     """
-    # TODO: Implementar configuración del LLM
-    # Pista: Revisa el notebook para ver ejemplos de configuración
+    # Obtener las claves de API del entorno
+    openai_key = os.getenv("___________")  # TODO: ¿Qué variable necesitas?
+    hf_key = os.getenv("HUGGINGFACE_API_KEY")
     
-    # Opción A: OpenAI (recomendado si tienes API key)
-    # llm = OpenAI(
-    #     model="gpt-4o-mini",
-    #     api_key=os.getenv("OPENAI_API_KEY")
-    # )
+    # Opción A: Intenta OpenAI primero si está disponible
+    if openai_key:
+        try:
+            llm = OpenAI(
+                model="gpt-4o-mini",
+                api_key=openai_key,
+                temperature=___  # TODO: ¿Qué temperatura usar? (0.0-1.0)
+            )
+            print("✅ Usando OpenAI GPT-4o-mini")
+            return ___  # TODO: ¿Qué retornar?
+        except Exception as e:
+            print(f"⚠️ Error configurando OpenAI: {e}")
     
-    # Opción B: HuggingFace (gratuito)
-    # llm = HuggingFaceInferenceAPI(
-    #     model_name="HuggingFaceTB/SmolLM3-3B",
-    #     max_new_tokens=1024,
-    #     temperature=0.1
-    # )
-    
-    pass  # Reemplaza esto con tu implementación
+    # TODO: Opción B: Fallback a HuggingFace
+    pass
 
 
 # =============================================================================
@@ -81,25 +83,19 @@ def create_news_agent(llm):
     Returns:
         AgentWorkflow configurado con herramienta de noticias
     """
-    # TODO: Importar la herramienta
-    # from src.apis.news_api import news_search_tool
-    
-    # TODO: Crear la herramienta
-    # news_tool = news_search_tool()
-    
-    # TODO: Crear el agente
-    # agent = AgentWorkflow.from_tools_or_functions(
-    #     tools_or_functions=[news_tool],
-    #     llm=llm,
-    #     system_prompt=(
-    #         "Eres un asistente especializado en búsqueda de noticias. "
-    #         "Puedes buscar noticias actualizadas usando tu herramienta. "
-    #         "Responde en español de manera amigable y profesional. "
-    #         "Recuerda las preferencias del usuario durante la conversación."
-    #     ),
-    # )
-    
-    pass  # Reemplaza esto con tu implementación
+    try:
+        # TODO: Importar la herramienta de noticias
+        from src.apis.news_api import ___________  # ¿Qué función importar?
+        
+        
+        news_tool = news_search_tool() 
+        
+        # TODO: Crear el agente con las herramientas
+        pass
+        
+    except ImportError as e:
+        print(f"❌ Error creando agente: {e}")
+        return None
 
 
 # =============================================================================
@@ -118,10 +114,12 @@ def create_conversation_context(agent):
     Returns:
         Context para mantener memoria conversacional
     """
-    # TODO: Implementar creación de contexto
-    # Pista: Context(agent)
-    
-    pass  # Reemplaza esto con tu implementación
+    try:
+        pass
+        
+    except Exception as e:
+        print(f"❌ Error creando contexto: {e}")
+        return None
 
 
 # =============================================================================
@@ -153,31 +151,49 @@ async def chat_with_news_agent(message: str, agent, context):
         # TODO: Ejecutar el agente
         # handler = agent.run(message, ctx=context)
         
-        # TODO: Mostrar el proceso de herramientas
-        # async for ev in handler.stream_events():
-        #     if isinstance(ev, ToolCallResult):
-        #         print(f"\n🔧 Buscando noticias...")
-        #         print(f"📡 Parámetros: {ev.tool_kwargs}")
-        #         print(f"📊 Encontradas: {len(ev.tool_output.articles) if hasattr(ev.tool_output, 'articles') else 'N/A'}")
-        #         print("🤖 Agente: ", end="", flush=True)
-        #     elif isinstance(ev, AgentStream):
-        #         print(ev.delta, end="", flush=True)
+        response_text = ""
+        tool_calls_made = 0
+        
+        # TODO: Procesar eventos en streaming
+        async for ev in handler.stream_events():
+            if isinstance(ev, ___):  # TODO: ¿Qué clase es?
+                tool_calls_made += 1
+                print(f"\n🔧 Usando herramienta de búsqueda...")
+                
+                # TODO: Mostrar parámetros de búsqueda
+                if hasattr(ev, 'tool_kwargs') and ev.tool_kwargs:
+                    params = ev.tool_kwargs
+                    print(f"📡 Parámetros: query='{params.get('___', 'N/A')}'")
+                
+                # TODO: Mostrar número de resultados
+                if hasattr(ev, 'tool_output'):
+                    output = ev.tool_output
+                    if hasattr(output, 'articles'):
+                        article_count = len(output._____)  # ¿Qué atributo?
+                        print(f"📊 Encontradas: {article_count} noticias")
+                
+                print("🤖 Procesando resultados: ", end="", flush=True)
+                
+            elif isinstance(ev, AgentStream):
+                # TODO: Mostrar el texto de respuesta en streaming
+                print(ev.___, end="", flush=True)  # ¿Qué atributo contiene el texto?
+                response_text += ev.delta
         
         # TODO: Obtener respuesta final
-        # response = await handler
+        response = await ___  # ¿Qué esperar?
         
-        # TODO: Extraer contenido de la respuesta
-        # response_text = response.response.content
-        # print(response_text)
+        print(f"\n{'='*60}")
         
-        print("\n" + "="*60)
-        # return response
+        # Mostrar resumen
+        if tool_calls_made > 0:
+            print(f"💫 Resumen: Se utilizaron {tool_calls_made} herramienta(s)")
         
-        pass  # Reemplaza esto con tu implementación
+        return ___  # TODO: ¿Qué retornar?
         
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"❌ Error durante la conversación: {e}")
         print("🔄 Verifica tu configuración de API keys y conexión a internet.")
+        print(f"📝 Detalles del error: {type(e).__name__}")
         return None
 
 
@@ -258,7 +274,7 @@ if __name__ == "__main__":
     # Verificación rápida del entorno
     print("🔍 Verificando entorno...")
     
-    required_packages = ['llama_index', 'openai', 'requests', 'pydantic', 'python-dotenv']
+    required_packages = ['llama_index', 'openai', 'requests', 'pydantic', 'load_dotenv']
     for package in required_packages:
         try:
             __import__(package.replace('-', '_'))
@@ -268,7 +284,7 @@ if __name__ == "__main__":
     
     print("\n🚀 Iniciando ejercicio...")
     
-    # Ejecutar en entorno async
+    # Ejecutar en entorno async (asyncio.run(main()) De normal en un jupyter notebook ya hay un proceso asíncrono, luego no hace falta)
     import asyncio
     asyncio.run(main())
 
@@ -278,27 +294,50 @@ if __name__ == "__main__":
 # =============================================================================
 
 """
-📝 NOTAS IMPORTANTES:
+📝 PISTAS Y AYUDAS PARA COMPLETAR EL EJERCICIO:
 
-1. VARIABLES DE ENTORNO:
-   - Crea un archivo .env en la raíz del proyecto
-   - Añade: NEWS_API_KEY=tu_clave_de_newsapi
-   - Opcional: OPENAI_API_KEY=tu_clave (si usas OpenAI)
+🔧 PARTE 1 - CONFIGURACIÓN LLM:
+   - Variable de entorno OpenAI: "OPENAI_API_KEY"
+   - Temperatura recomendada: 0.1 (más determinista)
+   - Si OpenAI falla, devolver None y intentar HuggingFace
 
-2. APIS GRATUITAS:
-   - NewsAPI: https://newsapi.org/ (500 requests/día gratis)
-   - HuggingFace: https://huggingface.co/ (uso gratuito limitado)
+🛠️ PARTE 2 - INTEGRACIÓN HERRAMIENTA:
+   - Función a importar: "news_search_tool"
+   - Lista de herramientas: [news_tool]
+   - Verbose=True para ver el proceso
+   - Si falla importación, devolver None
 
-3. DEBUGGING:
-   - Si hay errores de Pydantic, verifica que news_api.py esté actualizado
-   - Si falla la importación, verifica el path de src/
-   - Si no encuentra noticias, verifica tu API key
+🧠 PARTE 3 - MEMORIA CONVERSACIONAL:
+   - Context necesita el agente como parámetro
+   - Retornar el context creado
 
-4. MEJORAS EXTRAS (+1 punto):
-   - Añade filtros por fecha
-   - Formatea respuestas con emojis
-   - Implementa resúmenes de noticias
-   - Añade soporte multiidioma
+💬 PARTE 4 - CONVERSACIÓN INTELIGENTE:
+   - handler = agent.run(message, ctx=context)
+   - Parámetro de búsqueda: 'query'
+   - Atributo de artículos: 'articles'
+   - Texto del stream: ev.delta
+   - Esperar: handler
+   - Retornar: response
 
-¡Buena suerte! 🍀
+🌐 VARIABLES DE ENTORNO NECESARIAS:
+   - NEWS_API_KEY=tu_clave_de_newsapi (OBLIGATORIO)
+   - OPENAI_API_KEY=tu_clave_openai (OPCIONAL)
+   - HUGGINGFACE_API_KEY=tu_clave_hf (OBLIGATORIO)
+
+🔗 APIS GRATUITAS:
+   - NewsAPI: https://newsapi.org/ (500 requests/día)
+   - HuggingFace: https://huggingface.co/ (uso limitado)
+
+🐛 DEBUGGING COMÚN:
+   - ImportError: Ejecuta desde la raíz del proyecto
+   - Error de API: Verifica tu NEWS_API_KEY
+   - Error de LLM: Configura al menos una API key
+
+🌟 MEJORAS EXTRAS (+1 punto):
+   - Validación de entorno automática
+   - Formateo de respuestas con emojis  
+   - Manejo de errores más robusto
+   - Resúmenes de interacción
+
+¡Completa los ___ y TODO para que funcione! 🚀
 """
