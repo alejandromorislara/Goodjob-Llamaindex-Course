@@ -4,4 +4,16 @@ typing-extensions
 llama-index-core
 llama-index-llms-openai
 llama-index-llms-huggingface
+llama-index-embeddings-huggingface
+llama-index-embeddings-openai
 python-dotenv
+chromadb
+pypdf
+sentence-transformers
+matplotlib
+scikit-learn
+pandas
+numpy
+python-docx
+beautifulsoup4
+requests
