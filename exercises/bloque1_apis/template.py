@@ -1,10 +1,10 @@
 """
-🌐 Template: Sistema Multi-Agente con APIs y ChromaDB
+🤖 Template: Agente de Noticias con LlamaIndex
 
 INSTRUCCIONES:
 1. Completa las funciones marcadas con # TODO
 2. Configura las variables de entorno en .env
-3. Ejecuta y prueba las consultas de ejemplo
+3. Ejecuta y prueba las conversaciones de ejemplo
 
 ESTUDIANTE: ___________________
 FECHA: _______________________
@@ -12,218 +12,332 @@ FECHA: _______________________
 
 import os
 import sys
-from pathlib import Path
+from typing import Optional
 from dotenv import load_dotenv
 
 # Cargar variables de entorno
 load_dotenv()
 
-# Imports necesarios
-from llama_index.core import Settings, Document, VectorStoreIndex, StorageContext
-from llama_index.core.node_parser import SentenceSplitter
-from llama_index.core.tools import FunctionTool, QueryEngineTool
-from llama_index.core.agent import ReActAgent
+# Imports necesarios para LlamaIndex
+from llama_index.core.workflow import Context
+from llama_index.core.agent.workflow import AgentWorkflow, ToolCallResult, AgentStream
 from llama_index.llms.openai import OpenAI
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-from llama_index.vector_stores.chroma import ChromaVectorStore
-import chromadb
+from llama_index.llms.huggingface_api import HuggingFaceInferenceAPI
+
+# Agregar src al path para importar news_api
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
+
 
 # =============================================================================
-# PARTE 1: CONFIGURACIÓN Y CHROMADB (2.5 puntos)
+# PARTE 1: CONFIGURACIÓN DEL LLM (2.5 puntos)
 # =============================================================================
 
-def setup_environment():
-    """TODO: Configurar LLM y embeddings"""
-    openai_key = os.getenv("___________")  # ¿Qué variable?
+def setup_llm():
+    """
+    Configura y retorna un modelo de lenguaje.
     
+    TODO: Implementa estas opciones:
+    - OpenAI (requiere OPENAI_API_KEY)
+    - HuggingFace (requiere HUGGINGFACE_API_KEY)
+    
+    Returns:
+        LLM configurado y listo para usar
+    """
+    # Obtener las claves de API del entorno
+    openai_key = os.getenv("___________")  # TODO: ¿Qué variable necesitas?
+    hf_key = os.getenv("HUGGINGFACE_API_KEY")
+    
+    # Opción A: Intenta OpenAI primero si está disponible
     if openai_key:
-        Settings.llm = OpenAI(
-            model="gpt-4o-mini",
-            api_key=openai_key,
-            temperature=___  # ¿Qué temperatura?
-        )
-    
-    Settings.embed_model = HuggingFaceEmbedding(
-        model_name="___________"  # ¿Qué modelo?
-    )
-    return True
-
-def create_vector_database():
-    """TODO: Crear ChromaDB con documentos"""
-    sample_docs = [
-        Document(text="""POLÍTICA DE TRANSFERENCIAS
-        SWIFT UE: 15 EUR + 0.2%
-        SWIFT USA: 25 USD + 0.3%
-        SEPA >1000 EUR: gratis"""),
-        # TODO: Añadir más documentos
-    ]
-    
-    parser = SentenceSplitter(chunk_size=___, chunk_overlap=___)
-    nodes = parser.get_nodes_from_documents(sample_docs)
-    
-    client = chromadb.PersistentClient(path="../../chroma_db")
-    collection = client.get_or_create_collection("___________")
-    
-    vector_store = ChromaVectorStore(chroma_collection=collection)
-    storage_context = StorageContext.from_defaults(vector_store=vector_store)
-    
-    index_docs = VectorStoreIndex(___, storage_context=storage_context)
-    qe_docs = index_docs.as_query_engine(similarity_top_k=___)
-    
-    return qe_docs
-
-# =============================================================================
-# PARTE 2: HERRAMIENTAS (2.5 puntos)
-# =============================================================================
-
-def create_api_tools():
-    """TODO: Crear herramientas de API"""
-    def fx_lookup(base: str, quote: str) -> dict:
-        mock_rates = {("EUR", "USD"): 1.08, ("USD", "EUR"): 0.93}
-        rate = mock_rates.get((base.upper(), quote.upper()))
-        return {"rate": rate} if rate else {"error": "No soportado"}
-    
-    def current_weather(city: str) -> dict:
-        # TODO: Implementar clima mock
-        pass
-    
-    fx_tool = FunctionTool.from_defaults(
-        fn=fx_lookup, 
-        name="___________",
-        description="___________"
-    )
-    
-    weather_tool = FunctionTool.from_defaults(
-        fn=current_weather, 
-        name="current_weather",
-        description="Consulta clima de una ciudad"
-    )
-    
-    return [fx_tool, weather_tool]
-
-def create_math_tools():
-    """TODO: Crear calculadora segura"""
-    def safe_calculator(expression: str) -> dict:
-        import re
-        if not re.fullmatch(r"___________", expression):
-            return {"error": "Expresión no permitida"}
-        
         try:
-            result = eval(expression)
-            return {"result": result}
+            llm = OpenAI(
+                model="gpt-4o-mini",
+                api_key=openai_key,
+                temperature=___  # TODO: ¿Qué temperatura usar? (0.0-1.0)
+            )
+            print("✅ Usando OpenAI GPT-4o-mini")
+            return ___  # TODO: ¿Qué retornar?
         except Exception as e:
-            return {"error": str(e)}
+            print(f"⚠️ Error configurando OpenAI: {e}")
     
-    calc_tool = FunctionTool.from_defaults(
-        fn=safe_calculator, 
-        name="calculator",
-        description="___________"
-    )
-    
-    return [calc_tool]
+    # TODO: Opción B: Fallback a HuggingFace
+    pass
+
 
 # =============================================================================
-# PARTE 3: AGENTES Y ROUTER (2.5 puntos)
+# PARTE 2: INTEGRACIÓN DE LA HERRAMIENTA (2.5 puntos)
 # =============================================================================
 
-def create_agents(qe_docs, api_tools, math_tools):
-    """TODO: Crear agentes especializados"""
-    policy_tool = QueryEngineTool.from_defaults(
-        query_engine=qe_docs,
-        name="___________",
-        description="___________"
-    )
+def create_news_agent(llm):
+    """
+    Crea un agente que puede buscar noticias usando news_search_tool.
     
-    docs_agent = ReActAgent.from_tools([policy_tool], llm=Settings.llm, max_iterations=___)
-    api_agent = ReActAgent.from_tools(api_tools, llm=Settings.llm, max_iterations=4)
-    math_agent = ReActAgent.from_tools(math_tools, llm=Settings.llm, max_iterations=___)
+    TODO: 
+    1. Importar news_search_tool de src.apis.news_api
+    2. Crear un AgentWorkflow con la herramienta
+    3. Configurar un system_prompt apropiado
     
-    return {"docs": docs_agent, "api": api_agent, "math": math_agent}
-
-def create_router():
-    """TODO: Crear router inteligente"""
-    def route_with_rules(message: str) -> str:
-        msg_lower = message.lower()
-        docs_keywords = ["___________"]  # ¿Qué keywords?
-        api_keywords = ["___________"]
-        math_keywords = ["___________"]
+    Args:
+        llm: Modelo de lenguaje configurado
         
-        # TODO: Implementar lógica de routing
-        return "unknown"
-    
-    def smart_router(message: str) -> str:
-        # TODO: Combinar reglas + LLM
+    Returns:
+        AgentWorkflow configurado con herramienta de noticias
+    """
+    try:
+        # TODO: Importar la herramienta de noticias
+        from src.apis.news_api import ___________  # ¿Qué función importar?
+        
+        
+        news_tool = news_search_tool() 
+        
+        # TODO: Crear el agente con las herramientas
         pass
+        
+    except ImportError as e:
+        print(f"❌ Error creando agente: {e}")
+        return None
+
+
+# =============================================================================
+# PARTE 3: MEMORIA CONVERSACIONAL (2.5 puntos)
+# =============================================================================
+
+def create_conversation_context(agent):
+    """
+    Crea un contexto de conversación para mantener memoria.
     
-    return smart_router
-
-# =============================================================================
-# PARTE 4: ORQUESTACIÓN (2.5 puntos)
-# =============================================================================
-
-def create_orchestrator(agents, router):
-    """TODO: Crear orquestador multi-agente"""
-    def smart_chat(message: str):
-        # TODO: Detectar consultas complejas
-        # TODO: Coordinar múltiples agentes
-        # TODO: Combinar resultados
+    TODO: Crear y retornar un Context para el agente
+    
+    Args:
+        agent: AgentWorkflow configurado
+        
+    Returns:
+        Context para mantener memoria conversacional
+    """
+    try:
         pass
-    
-    return smart_chat
+        
+    except Exception as e:
+        print(f"❌ Error creando contexto: {e}")
+        return None
+
 
 # =============================================================================
-# FUNCIÓN PRINCIPAL
+# PARTE 4: CONVERSACIÓN INTELIGENTE (2.5 puntos)
 # =============================================================================
 
-def main():
-    print("🚀 Sistema Multi-Agente con ChromaDB")
+async def chat_with_news_agent(message: str, agent, context):
+    """
+    Maneja una conversación con el agente de noticias mostrando el proceso.
     
-    # TODO: Ejecutar todas las partes
-    setup_environment()
-    qe_docs = create_vector_database()
-    api_tools = create_api_tools()
-    math_tools = create_math_tools()
-    agents = create_agents(qe_docs, api_tools, math_tools)
-    router = create_router()
-    smart_chat = create_orchestrator(agents, router)
+    TODO:
+    1. Ejecutar agent.run() con el mensaje y contexto
+    2. Mostrar el proceso usando handler.stream_events()
+    3. Manejar errores graciosamente
+    4. Retornar la respuesta final
     
-    # Casos de prueba
-    test_cases = [
-        "¿Comisión SWIFT a USA?",
-        "¿Cambio EUR/USD?",
-        "Calcula 15% de 2500",
-        "Si envío 1200 EUR por SWIFT a USA, ¿cuánto llega?"
-    ]
+    Args:
+        message: Mensaje del usuario
+        agent: AgentWorkflow configurado
+        context: Context para memoria
+        
+    Returns:
+        Respuesta del agente
+    """
+    print(f"👤 Usuario: {message}")
+    print("🤖 Agente: ", end="", flush=True)
     
-    for test in test_cases:
-        print(f"\n🧪 Test: {test}")
-        # TODO: Ejecutar smart_chat(test)
+    try:
+        # TODO: Ejecutar el agente
+        # handler = agent.run(message, ctx=context)
+        
+        response_text = ""
+        tool_calls_made = 0
+        
+        # TODO: Procesar eventos en streaming
+        async for ev in handler.stream_events():
+            if isinstance(ev, ___):  # TODO: ¿Qué clase es?
+                tool_calls_made += 1
+                print(f"\n🔧 Usando herramienta de búsqueda...")
+                
+                # TODO: Mostrar parámetros de búsqueda
+                if hasattr(ev, 'tool_kwargs') and ev.tool_kwargs:
+                    params = ev.tool_kwargs
+                    print(f"📡 Parámetros: query='{params.get('___', 'N/A')}'")
+                
+                # TODO: Mostrar número de resultados
+                if hasattr(ev, 'tool_output'):
+                    output = ev.tool_output
+                    if hasattr(output, 'articles'):
+                        article_count = len(output._____)  # ¿Qué atributo?
+                        print(f"📊 Encontradas: {article_count} noticias")
+                
+                print("🤖 Procesando resultados: ", end="", flush=True)
+                
+            elif isinstance(ev, AgentStream):
+                # TODO: Mostrar el texto de respuesta en streaming
+                print(ev.___, end="", flush=True)  # ¿Qué atributo contiene el texto?
+                response_text += ev.delta
+        
+        # TODO: Obtener respuesta final
+        response = await ___  # ¿Qué esperar?
+        
+        print(f"\n{'='*60}")
+        
+        # Mostrar resumen
+        if tool_calls_made > 0:
+            print(f"💫 Resumen: Se utilizaron {tool_calls_made} herramienta(s)")
+        
+        return ___  # TODO: ¿Qué retornar?
+        
+    except Exception as e:
+        print(f"❌ Error durante la conversación: {e}")
+        print("🔄 Verifica tu configuración de API keys y conexión a internet.")
+        print(f"📝 Detalles del error: {type(e).__name__}")
+        return None
+
+
+# =============================================================================
+# FUNCIÓN PRINCIPAL Y CASOS DE PRUEBA
+# =============================================================================
+
+async def main():
+    """
+    Función principal que prueba todas las funcionalidades.
+    """
+    print("🚀 Iniciando Agente de Noticias con LlamaIndex")
+    print("="*60)
+    
+    # Verificar variables de entorno
+    if not os.getenv("NEWS_API_KEY"):
+        print("❌ Error: NEWS_API_KEY no configurada")
+        print("💡 Obtén tu clave gratuita en: https://newsapi.org/")
+        return
+    
+    try:
+        # PARTE 1: Configurar LLM
+        print("\n1️⃣ Configurando modelo de lenguaje...")
+        llm = setup_llm()
+        if llm is None:
+            print("❌ Error: No se pudo configurar el LLM")
+            return
+        print("✅ LLM configurado correctamente")
+        
+        # PARTE 2: Crear agente
+        print("\n2️⃣ Creando agente de noticias...")
+        agent = create_news_agent(llm)
+        if agent is None:
+            print("❌ Error: No se pudo crear el agente")
+            return
+        print("✅ Agente creado correctamente")
+        
+        # PARTE 3: Crear contexto
+        print("\n3️⃣ Configurando memoria conversacional...")
+        context = create_conversation_context(agent)
+        if context is None:
+            print("❌ Error: No se pudo crear el contexto")
+            return
+        print("✅ Memoria configurada correctamente")
+        
+        # PARTE 4: Casos de prueba
+        print("\n4️⃣ Ejecutando casos de prueba...")
+        
+        test_cases = [
+            "Busca noticias sobre inteligencia artificial",
+            "Mi nombre es Carlos. Busca noticias sobre OpenAI en español", 
+            "¿Recuerdas mi nombre? Busca más noticias sobre IA",
+            "Busca 5 noticias recientes sobre tecnología ordenadas por relevancia"
+        ]
+        
+        for i, test_case in enumerate(test_cases, 1):
+            print(f"\n🧪 Test {i}/{len(test_cases)}:")
+            response = await chat_with_news_agent(test_case, agent, context)
+            
+            if response is None:
+                print(f"❌ Test {i} falló")
+                break
+            
+            print(f"✅ Test {i} completado")
+        
+        print(f"\n🎉 ¡Ejercicio completado! Revisa los resultados arriba.")
+        
+    except Exception as e:
+        print(f"❌ Error general: {e}")
+        print("🔍 Revisa tu implementación y configuración")
+
+
+# =============================================================================
+# EJECUCIÓN
+# =============================================================================
 
 if __name__ == "__main__":
-    main()
+    # Verificación rápida del entorno
+    print("🔍 Verificando entorno...")
+    
+    required_packages = ['llama_index', 'openai', 'requests', 'pydantic', 'load_dotenv']
+    for package in required_packages:
+        try:
+            __import__(package.replace('-', '_'))
+            print(f"✅ {package}")
+        except ImportError:
+            print(f"❌ {package} - Instala con: pip install {package}")
+    
+    print("\n🚀 Iniciando ejercicio...")
+    
+    # Ejecutar en entorno async (asyncio.run(main()) De normal en un jupyter notebook ya hay un proceso asíncrono, luego no hace falta)
+    import asyncio
+    asyncio.run(main())
+
 
 # =============================================================================
-# PISTAS
+# NOTAS PARA EL ESTUDIANTE
 # =============================================================================
+
 """
-🔧 CONFIGURACIÓN:
-- Variable OpenAI: "OPENAI_API_KEY"
-- Temperatura: 0.1
-- Embeddings: "sentence-transformers/all-MiniLM-L6-v2"
-- Chunk size: 500, overlap: 50
-- Colección: "company_policies"
+📝 PISTAS Y AYUDAS PARA COMPLETAR EL EJERCICIO:
 
-🛠️ HERRAMIENTAS:
-- Regex calculadora: r"[0-9\.\+\-\*\/\(\) ]+"
-- Nombres: "fx_lookup", "current_weather", "calculator"
-- Herramienta docs: "policies_search"
+🔧 PARTE 1 - CONFIGURACIÓN LLM:
+   - Variable de entorno OpenAI: "OPENAI_API_KEY"
+   - Temperatura recomendada: 0.1 (más determinista)
+   - Si OpenAI falla, devolver None y intentar HuggingFace
 
-🎯 ROUTER:
-- Keywords docs: ["documento", "política", "comisión"]
-- Keywords api: ["cambio", "clima", "eur", "usd"]
-- Keywords math: ["calcula", "suma", "%"]
+🛠️ PARTE 2 - INTEGRACIÓN HERRAMIENTA:
+   - Función a importar: "news_search_tool"
+   - Lista de herramientas: [news_tool]
+   - Verbose=True para ver el proceso
+   - Si falla importación, devolver None
 
-🎼 ORQUESTACIÓN:
-- Detectar: "swift" + divisas
-- Secuencia: Docs → Math → API
+🧠 PARTE 3 - MEMORIA CONVERSACIONAL:
+   - Context necesita el agente como parámetro
+   - Retornar el context creado
+
+💬 PARTE 4 - CONVERSACIÓN INTELIGENTE:
+   - handler = agent.run(message, ctx=context)
+   - Parámetro de búsqueda: 'query'
+   - Atributo de artículos: 'articles'
+   - Texto del stream: ev.delta
+   - Esperar: handler
+   - Retornar: response
+
+🌐 VARIABLES DE ENTORNO NECESARIAS:
+   - NEWS_API_KEY=tu_clave_de_newsapi (OBLIGATORIO)
+   - OPENAI_API_KEY=tu_clave_openai (OPCIONAL)
+   - HUGGINGFACE_API_KEY=tu_clave_hf (OBLIGATORIO)
+
+🔗 APIS GRATUITAS:
+   - NewsAPI: https://newsapi.org/ (500 requests/día)
+   - HuggingFace: https://huggingface.co/ (uso limitado)
+
+🐛 DEBUGGING COMÚN:
+   - ImportError: Ejecuta desde la raíz del proyecto
+   - Error de API: Verifica tu NEWS_API_KEY
+   - Error de LLM: Configura al menos una API key
+
+🌟 MEJORAS EXTRAS (+1 punto):
+   - Validación de entorno automática
+   - Formateo de respuestas con emojis  
+   - Manejo de errores más robusto
+   - Resúmenes de interacción
+
+¡Completa los ___ y TODO para que funcione! 🚀
 """
