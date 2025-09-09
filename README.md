@@ -149,26 +149,28 @@ cp .env.example .env
 ---
 
 ## 🤝 Contribuir y Contacto
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGCrL-V9c0NgujafmRoO5ZIL-92l0GF5LvMA&s" align="right" width="150" style="margin-left:60px;"/>
+
+<table>
+<tr>
+<td style="width:70%; vertical-align:top;">
 
 ### 🙌 Cómo participar como voluntario formador
-
 
 Si deseas sumarte al programa **#IMPACT** como voluntario:
 
 1. **📧 Contacta** con la coordinación del programa  
 2. **📅 Confirma** tu disponibilidad en el calendario de sesiones  
-
 3. **📚 Prepara** tu sesión con los materiales y contenidos asignados  
 4. **🎯 Comparte** tu experiencia y conocimiento con los participantes  
 
+</td>
+<td style="width:30%; text-align:center;">
 
----
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGCrL-V9c0NgujafmRoO5ZIL-92l0GF5LvMA&s" width="180"/>
 
-### 👩‍💼 Coordinación del Voluntariado
-**Rocío Lago**  
-- 📧 Correo: [rlago@goodjob.es](mailto:rlago@goodjob.es)  
-- 📱 Teléfono: 605 628 531  
+</td>
+</tr>
+</table>
 
 ---
 
