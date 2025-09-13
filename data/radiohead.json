@@ -1,0 +1,1051 @@
+{
+    "@context": "http://schema.org/",
+    "@id": "https://www.letras.com/radiohead/",
+    "@type": "MusicGroup",
+    "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+    "genre": "Rock Alternativo",
+    "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+    "name": "Radiohead",
+    "potentialAction": {
+        "@type": "ListenAction",
+        "expectsAcceptanceOf": {
+            "@type": "Offer",
+            "eligibleRegion": [
+                {
+                    "@type": "Country",
+                    "name": "BR"
+                },
+                {
+                    "@type": "Country",
+                    "name": "US"
+                },
+                {
+                    "@type": "Country",
+                    "name": "AR"
+                },
+                {
+                    "@type": "Country",
+                    "name": "CL"
+                },
+                {
+                    "@type": "Country",
+                    "name": "VE"
+                },
+                {
+                    "@type": "Country",
+                    "name": "EC"
+                },
+                {
+                    "@type": "Country",
+                    "name": "MX"
+                },
+                {
+                    "@type": "Country",
+                    "name": "ES"
+                },
+                {
+                    "@type": "Country",
+                    "name": "UY"
+                }
+            ]
+        },
+        "target": [
+            {
+                "@type": "EntryPoint",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ],
+                "inLanguage": [
+                    "pt",
+                    "en",
+                    "es"
+                ],
+                "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+            }
+        ]
+    },
+    "track": [
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/63485/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "Creep es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT3M55S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/pablo-honey-1993/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 1993,
+                "description": "Pablo Honey es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/4/5/3/2/145881666209156.jpg",
+                "name": "Pablo Honey",
+                "numtracks": 12,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/pablo-honey-1993/"
+            },
+            "name": "Creep",
+            "url": "https://www.letras.com/radiohead/63485/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/79031/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "Let Down es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT4M59S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/ok-computer-1997/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 1997,
+                "description": "Ok Computer es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/7/1/0/0/145861666209236.jpg",
+                "name": "Ok Computer",
+                "numtracks": 12,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/ok-computer-1997/"
+            },
+            "name": "Let Down",
+            "url": "https://www.letras.com/radiohead/79031/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/65094/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "Karma Police es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT4M26S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/ok-computer-1997/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 1997,
+                "description": "Ok Computer es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/7/1/0/0/145861666209236.jpg",
+                "name": "Ok Computer",
+                "numtracks": 12,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/ok-computer-1997/"
+            },
+            "name": "Karma Police",
+            "url": "https://www.letras.com/radiohead/65094/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/63014/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "No Surprises es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT3M46S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/ok-computer-1997/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 1997,
+                "description": "Ok Computer es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/7/1/0/0/145861666209236.jpg",
+                "name": "Ok Computer",
+                "numtracks": 12,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/ok-computer-1997/"
+            },
+            "name": "No Surprises",
+            "url": "https://www.letras.com/radiohead/63014/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/63486/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "Fake Plastic Trees es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT4M57S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/the-bends-1995/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 1995,
+                "description": "The Bends es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/7/e/6/1/145871666209195.jpg",
+                "name": "The Bends",
+                "numtracks": 12,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/the-bends-1995/"
+            },
+            "name": "Fake Plastic Trees",
+            "url": "https://www.letras.com/radiohead/63486/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/1101266/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "All I Need es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT3M52S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/in-rainbows-2007/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 2007,
+                "description": "In Rainbows es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/3/7/3/f/145801666209538.jpg",
+                "name": "In Rainbows",
+                "numtracks": 10,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/in-rainbows-2007/"
+            },
+            "name": "All I Need",
+            "url": "https://www.letras.com/radiohead/1101266/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/68008/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "High And Dry es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT4M25S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/the-bends-1995/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 1995,
+                "description": "The Bends es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/7/e/6/1/145871666209195.jpg",
+                "name": "The Bends",
+                "numtracks": 12,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/the-bends-1995/"
+            },
+            "name": "High And Dry",
+            "url": "https://www.letras.com/radiohead/68008/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/68837/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "Exit Music (For A Film) es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT4M46S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/ok-computer-1997/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 1997,
+                "description": "Ok Computer es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/7/1/0/0/145861666209236.jpg",
+                "name": "Ok Computer",
+                "numtracks": 12,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/ok-computer-1997/"
+            },
+            "name": "Exit Music (For A Film)",
+            "url": "https://www.letras.com/radiohead/68837/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/1100758/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "Weird Fishes / Arpeggi es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT5M19S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/in-rainbows-2007/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 2007,
+                "description": "In Rainbows es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/3/7/3/f/145801666209538.jpg",
+                "name": "In Rainbows",
+                "numtracks": 10,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/in-rainbows-2007/"
+            },
+            "name": "Weird Fishes / Arpeggi",
+            "url": "https://www.letras.com/radiohead/1100758/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@id": "https://www.letras.com/radiohead/1101608/",
+            "@type": "MusicRecording",
+            "byArtist": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/",
+                "@type": "MusicGroup",
+                "description": "Canciones de Radiohead , artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+                "name": "Radiohead",
+                "potentialAction": {
+                    "@type": "ListenAction",
+                    "expectsAcceptanceOf": {
+                        "@type": "Offer",
+                        "eligibleRegion": [
+                            {
+                                "@type": "Country",
+                                "name": "BR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "US"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "AR"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "CL"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "VE"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "EC"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "MX"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "ES"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "UY"
+                            }
+                        ]
+                    },
+                    "target": [
+                        {
+                            "@type": "EntryPoint",
+                            "actionPlatform": [
+                                "http://schema.org/DesktopWebPlatform",
+                                "http://schema.org/MobileWebPlatform"
+                            ],
+                            "inLanguage": [
+                                "pt",
+                                "en",
+                                "es"
+                            ],
+                            "urlTemplate": "https://www.letras.com/radiohead/ouvir.html"
+                        }
+                    ]
+                },
+                "url": "https://www.letras.com/radiohead/"
+            },
+            "description": "Jigsaw Falling Into Place es una canción de Radiohead, artista del estilo Rock Alternativo",
+            "duration": "PT4M10S",
+            "genre": "Rock Alternativo",
+            "image": "https://akamai.sscdn.co/uploadfile/letras/fotos/9/1/0/6/9106f1b61cc155e930be5fa69f70b9b5.jpg",
+            "inAlbum": {
+                "@context": "http://schema.org/",
+                "@id": "https://www.letras.com/radiohead/discografia/in-rainbows-2007/",
+                "@type": "MusicAlbum",
+                "byArtist": {
+                    "@id": "https://www.letras.com/radiohead/",
+                    "@type": "MusicGroup",
+                    "name": "Radiohead"
+                },
+                "datePublished": 2007,
+                "description": "In Rainbows es un álbum de Radiohead, artista del estilo Rock Alternativo",
+                "genre": "Rock Alternativo",
+                "image": "https://akamai.sscdn.co/uploadfile/letras/albuns/3/7/3/f/145801666209538.jpg",
+                "name": "In Rainbows",
+                "numtracks": 10,
+                "publisher": "XL Recordings",
+                "url": "https://www.letras.com/radiohead/discografia/in-rainbows-2007/"
+            },
+            "name": "Jigsaw Falling Into Place",
+            "url": "https://www.letras.com/radiohead/1101608/"
+        }
+    ],
+    "url": "https://www.letras.com/radiohead/"
+}
