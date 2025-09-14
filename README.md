@@ -40,8 +40,7 @@ curso-llamaindex-pydantic/
 │   ├── bloque2_pydantic/           # Ejercicio de validación avanzada
 │   └── bloque2_parseo/             # Ejercicio de parseo web con LLM
 │       ├── enunciado.md
-│       ├── template.py
-│       └── ejemplo_funcional.py
+│       └─ template.py
 ├── ✅ solutions/                    # Soluciones completas de los ejercicios
 │   ├── bloque1_apis_sol.py
 │   ├── bloque1_agentes_sol.py
