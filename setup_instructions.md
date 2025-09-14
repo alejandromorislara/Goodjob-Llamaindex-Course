@@ -10,7 +10,6 @@ Durante el curso trabajaremos con:
 - 🤖 **Modelos LLM** gratuitos via Hugging Face
 - 🌤️ **API del clima** (OpenWeatherMap) 
 - 📰 **API de noticias** (NewsAPI)
-- 🐉 **API de Pokémon** (PokeAPI - sin token necesario)
 - 🐍 **Python** y librerías especializadas
 
 ---
@@ -111,11 +110,6 @@ pip install -r requirements.txt
 
 **Límites gratuitos:** 1000 requests/día.
 
-### 🐉 PokeAPI (¡Sin token!)
-
-**¿Para qué?** En el proyecto final crearemos un cliente para consultar información de Pokémon.
-
-**¡No necesitas registrarte!** PokeAPI es completamente gratuita y abierta. Solo necesitarás la URL base: `https://pokeapi.co/api/v2/`
 
 ---
 
@@ -133,9 +127,6 @@ HF_TOKEN=hf_tu_token_aqui
 OPENWEATHER_KEY=tu_api_key_de_openweather
 NEWS_API_KEY=tu_api_key_de_newsapi
 
-# PokeAPI (ya configurado, no necesitas token)
-POKEAPI_BASE_URL=https://pokeapi.co/api/v2/
-```
 
 ### Opción B: Variables de Sistema
 
@@ -230,7 +221,6 @@ Una vez configurado todo:
 1. 🎯 **Empieza con el notebook:** `notebooks/01_uso_apis_llamaindex.ipynb`
 2. 🤖 **Prueba los agentes:** `agente_avanzado.py`
 3. 🏗️ **Haz los ejercicios:** Carpeta `exercises/`
-4. 🎮 **Proyecto final:** `final_proyect/pokemon.py`
 
 ---
 

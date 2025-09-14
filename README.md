@@ -28,28 +28,40 @@ Capacitar a los alumnos para la **empleabilidad en roles tecnológicos**, desarr
 
 ```bash
 curso-llamaindex-pydantic/
-├── 📓 notebooks/         # Material principal en Jupyter Notebooks
+├── 📓 notebooks/                    # Material principal en Jupyter Notebooks
 │   ├── 01_uso_apis_llamaindex.ipynb
 │   ├── 02_agentes_llamaindex.ipynb
 │   ├── 03_refresco_pydantic.ipynb
 │   ├── 04_parseo_documentos.ipynb
-│   ├── extra_retos.ipynb
-│   └── sources/          # Recursos visuales
-├── 🏋️ exercises/         # Ejercicios prácticos
-│   ├── bloque1_apis/
-│   ├── bloque1_agentes/
-│   ├── bloque2_pydantic/
-│   └── bloque2_parseo/
-├── ✅ solutions/         # Soluciones de los ejercicios
-├── 🎯 final_proyect/     # Proyecto final
-├── 🔧 src/               # Código fuente del curso
-│   ├── apis/
-│   ├── embeddings/
-│   └── parsers/
-├── 📊 data/              # Datos de ejemplo
-├── 🗄️ chroma_db/          # Base de datos vectorial
-├── requirements.txt       # Dependencias Python
-└── setup_instructions.md  # Guía de configuración
+│   └── sources/                     # Recursos visuales (diagramas, imágenes)
+├── 🏋️ exercises/                    # Ejercicios prácticos
+│   ├── bloque1_apis/               # Ejercicio de APIs con NewsAPI
+│   ├── bloque1_agentes/            # Ejercicio de agentes multi-sistema
+│   ├── bloque2_pydantic/           # Ejercicio de validación avanzada
+│   └── bloque2_parseo/             # Ejercicio de parseo web con LLM
+│       ├── enunciado.md
+│       ├── template.py
+│       └── ejemplo_funcional.py
+├── ✅ solutions/                    # Soluciones completas de los ejercicios
+│   ├── bloque1_apis_sol.py
+│   ├── bloque1_agentes_sol.py
+│   ├── bloque2_pydantic_sol.py
+│   └── bloque2_parseo_sol.py
+├── 🔧 src/                         # Código fuente del curso
+│   ├── apis/                       # APIs integradas (NewsAPI, WeatherAPI)
+│   ├── embeddings/                 # Modelos de embeddings
+│   └── string_utils.py             # Utilidades de procesamiento
+├── 🏗️ models/                      # Modelos Pydantic de ejemplo
+│   ├── earnings_model.py
+│   └── radiohead.py
+├── 📊 data/                        # Datasets de ejemplo
+│   ├── radiohead.json             # Dataset principal para parseo
+│   ├── BOE-A-1978-31229-consolidado.pdf
+│   
+├── 🗄️ chroma_db/                   # Base de datos vectorial ChromaDB
+├── 🕷️ llamaindex_docs_crawler/      # Web scraper para documentación
+├── requirements.txt                # Dependencias Python
+└── setup_instructions.md           # Guía de configuración detallada
 ````
 
 ---
@@ -80,17 +92,11 @@ curso-llamaindex-pydantic/
 * **Tecnologías**: Pydantic v2, validaciones personalizadas, control de LLMs
 * **Funcionalidades**: EnhancedCustomer, AdvancedTransaction, LLMDataValidator
 
-#### 📄 **Ejercicio Parseo**: Extracción Documental
+#### 📄 **Ejercicio Parseo**: Extracción Web y Base de Datos Vectorial
 
-* **Objetivo**: Parseo de documentos con agentes especializados
-* **Tecnologías**: PDF parsing, HTML parsing, Pydantic models
-* **Funcionalidades**: Extracción estructurada, validación de contenido
-
----
-
-## 🎮 Proyecto Final
-
-*La información sobre el proyecto final se añadirá próximamente.*
+* **Objetivo**: Sistema completo de parseo JSON + extracción web con LLM tipado
+* **Tecnologías**: SimpleWebPageReader, LLM tipado, ChromaDB, Pydantic v2
+* **Funcionalidades**: Extracción de letras desde web, análisis de sentimientos, persistencia vectorial
 
 ---
 
@@ -105,15 +111,15 @@ curso-llamaindex-pydantic/
 ### 🔑 Variables de Entorno
 
 ```bash
-# Hugging Face Token (OBLIGATORIO)
+# OpenAI API Key (OBLIGATORIO para ejercicios con LLM)
+OPENAI_API_KEY=sk-tu_api_key_de_openai
+
+# Hugging Face Token (OBLIGATORIO para embeddings)
 HF_TOKEN=hf_tu_token_aqui
 
-# APIs opcionales
+# APIs opcionales para ejercicios específicos
 OPENWEATHER_KEY=tu_api_key_de_openweather
 NEWS_API_KEY=tu_api_key_de_newsapi
-
-# PokeAPI (ya configurado)
-POKEAPI_BASE_URL=https://pokeapi.co/api/v2/
 ```
 
 ### 🚀 Instalación Rápida
@@ -141,9 +147,15 @@ cp .env.example .env
 ## 🚀 Cómo Empezar
 
 1. **📖 Lee la guía de configuración** → `setup_instructions.md`
-2. **🔧 Configura tu entorno** con las APIs necesarias
-3. **📓 Explora los notebooks** en orden secuencial
-4. **🏋️ Completa los ejercicios** de cada bloque
+2. **🔧 Configura tu entorno** con las APIs necesarias (especialmente `OPENAI_API_KEY`)
+3. **📓 Explora los notebooks** en orden secuencial:
+   - `01_uso_apis_llamaindex.ipynb` - Fundamentos de APIs
+   - `02_agentes_llamaindex.ipynb` - Sistemas multi-agente
+   - `03_refresco_pydantic.ipynb` - Validación avanzada
+   - `04_parseo_documentos.ipynb` - Parseo con LLM
+4. **🏋️ Completa los ejercicios** de cada bloque:
+   - Bloque 1: APIs y Agentes
+   - Bloque 2: Pydantic y Parseo Web
 5. **✅ Revisa las soluciones** para comparar enfoques
 
 ---

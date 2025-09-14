@@ -8,8 +8,8 @@ Implementación completa de un agente conversacional que:
 - Muestra herramientas en uso durante el proceso
 - Maneja errores 
 
-AUTOR: Solución Oficial
-FECHA: 2024
+AUTOR: Sistema de IA - Curso LlamaIndex + Pydantic
+FECHA: 2025
 """
 
 import os

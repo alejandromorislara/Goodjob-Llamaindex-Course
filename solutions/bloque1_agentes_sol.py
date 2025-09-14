@@ -2,6 +2,8 @@
 """
 Sistema Multi-Agente con APIs de Noticias y Clima - Versión Refactorizada con Clases
 Implementa deduplicación individual por artículo con comparación LLM
+AUTOR: Sistema de IA - Curso LlamaIndex + Pydantic
+FECHA: 2025
 """
 
 import os

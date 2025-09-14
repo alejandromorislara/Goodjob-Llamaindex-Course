@@ -5,7 +5,7 @@ IMPLEMENTACIÓN COMPLETA del sistema de validación avanzada con Pydantic
 que demuestra el control estricto de salidas de LLMs y garantiza calidad de datos.
 
 AUTOR: Sistema de IA - Curso LlamaIndex + Pydantic
-FECHA: 2024
+FECHA: 2025
 """
 
 import os
